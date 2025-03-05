@@ -122,3 +122,4 @@ jobs:
           context: ./gateway/
           push: true
           tags: zingiev/kittygram_gateway:latest
+ 
