@@ -15,6 +15,8 @@ services:
   backend:
     image: zingiev/kittygram_backend
     env_file: .env
+    depends_on:
+      - db
     volumes:
       - static:/backend_static
       - media:/app/media
@@ -27,6 +29,9 @@ services:
   gateway:
     image: zingiev/kittygram_gateway
     env_file: .env
+    depends_on:
+      - backend
+      - frontend
     ports:
       - 9000:80
     volumes:
