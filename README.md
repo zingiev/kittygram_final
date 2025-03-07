@@ -64,13 +64,13 @@ docker-compose up -d
 ```
 3. Выполните миграции и соберите статические файлы:
 ```bash
-docker-compose exec web python manage.py migrate
-docker-compose exec web python manage.py collectstatic
-docker-compose exec web python cp -r /app/backend_static/. /backend_static/static/
+docker-compose exec backend python manage.py migrate
+docker-compose exec backend python manage.py collectstatic
+docker-compose exec backend python cp -r /app/backend_static/. /backend_static/static/
 ```
 4. Создайте суперпользователя:
 ```bash
-docker-compose exec web python manage.py createsuperuser
+docker-compose exec backend python manage.py createsuperuser
 ```
 ## Доступ к приложению
 http://localhost:9000
